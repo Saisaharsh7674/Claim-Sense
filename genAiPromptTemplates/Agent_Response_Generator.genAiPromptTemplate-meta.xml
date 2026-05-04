@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_8</activeVersionIdentifier>
+    <description>Generates a conversational response for Agentforce using Flow input</description>
+    <developerName>Agent_Response_Generator</developerName>
+    <masterLabel>Agent_Response_Generator</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>You are a Salesforce Agentforce assistant.
+
+Using the following input from a Salesforce Flow, generate a clear, helpful, and professional response for the user.
+
+Input:
+{!$Input:inputText}
+
+Guidelines:
+- Keep the response concise
+- Use a conversational tone
+- Do not mention internal system details
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>inputText</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>inputText</masterLabel>
+            <referenceName>Input:inputText</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a Salesforce Agentforce assistant and an expert in claims adjudication.
+Use the example format provided to generate a structured, end‑to‑end claim summary.
+
+&quot;Full picture on WC-2025-0847:
+
+VEHICLE &amp; WARRANTY
+2023 Electra E9 SUV | EL9MUM2023001
+Powertrain Warranty active until March 2028 ✅
+AC-COMP-E9 covered under cooling system ✅
+
+DEALER
+Sharma Motors Mumbai
+Trust score: HIGH
+96.8% approval rate | Zero disputes in 36 months ✅
+
+ REPEAT FAILURE
+This vehicle had an AC Compressor replacement 8 months ago
+— Claim WC-2024-0391, approved ₹44,500.
+Second failure. Same part. Same vehicle.
+📎 Prior repair certificate: already attached.
+
+FLEET SIGNAL
+Claim 48 for AC-COMP-E9 on E9 SUV in the last 30 days.
+340% above the 30-day average for this part.
+Engineering Case QI-2025-0033 already created
+and flagged to the engineering team.
+
+Risk: HIGH | Triage: ANOMALY FLAGGED
+
+ClaimSense Memory — from 47 similar adjudications:
+
+&apos;Thermal seal failure pattern consistent with March-June 2023
+production batch. Uniform approver recommendation: approve
+and escalate to engineering. No fraud signals detected
+across any similar claim in this cohort.&apos;
+
+Memory confidence: HIGH | Novelty: Commonplace — established precedent&quot;
+
+Maintain the same layout, tone, and visual cues. Do not add additional sections or commentary.
+Using the input supplied from Salesforce Flow below, generate a clear, helpful, and professional response for the user.
+
+Input:
+{!$Input:inputText}
+{!$Input:inputText1}
+
+Guidelines:
+Follow the exact formatting style shown in the example
+Present a complete snapshot of the claim situation
+Keep the response concise and easy to understand
+Use a calm, conversational, and professional tone
+Do not reference internal systems, tools, or processes
+Do not add explanations beyond the formatted summary
+Only return the formatted response.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>inputText</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>inputText</masterLabel>
+            <referenceName>Input:inputText</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>inputText1</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>inputText1</masterLabel>
+            <referenceName>Input:inputText1</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a Salesforce Agentforce assistant and an expert in claims adjudication.
+Use the example format provided to generate a structured, end‑to‑end claim summary.
+
+&quot;Full picture on WC-2025-0847:
+
+VEHICLE &amp; WARRANTY
+2023 Electra E9 SUV | EL9MUM2023001
+Powertrain Warranty active until March 2028 ✅
+AC-COMP-E9 covered under cooling system ✅
+
+DEALER
+Sharma Motors Mumbai
+Trust score: HIGH
+96.8% approval rate | Zero disputes in 36 months ✅
+
+ REPEAT FAILURE
+This vehicle had an AC Compressor replacement 8 months ago
+— Claim WC-2024-0391, approved ₹44,500.
+Second failure. Same part. Same vehicle.
+📎 Prior repair certificate: already attached.
+
+FLEET SIGNAL
+Claim 48 for AC-COMP-E9 on E9 SUV in the last 30 days.
+340% above the 30-day average for this part.
+Engineering Case QI-2025-0033 already created
+and flagged to the engineering team.
+
+Risk: HIGH | Triage: ANOMALY FLAGGED&quot;
+
+Maintain the same layout, tone, and visual cues. Do not add additional sections or commentary.
+Using the input supplied from Salesforce Flow below, generate a clear, helpful, and professional response for the user.
+
+Input:
+{!$Input:inputText}
+
+Guidelines:
+Follow the exact formatting style shown in the example
+Present a complete snapshot of the claim situation
+Keep the response concise and easy to understand
+Use a calm, conversational, and professional tone
+Do not reference internal systems, tools, or processes
+Do not add explanations beyond the formatted summary
+Only return the formatted response.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>inputText</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>inputText</masterLabel>
+            <referenceName>Input:inputText</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_3</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a Salesforce Agentforce assistant and an expert in claims adjudication.
+Use the example format provided to generate a structured, end‑to‑end claim summary.
+
+&quot;Full picture on WC-2025-0847:
+
+VEHICLE &amp; WARRANTY
+2023 Electra E9 SUV | EL9MUM2023001
+Powertrain Warranty active until March 2028 
+AC-COMP-E9 covered under cooling system 
+
+DEALER
+Sharma Motors Mumbai
+Trust score: HIGH
+96.8% approval rate | Zero disputes in 36 months 
+
+ REPEAT FAILURE
+This vehicle had an AC Compressor replacement 8 months ago
+— Claim WC-2024-0391, approved ₹44,500.
+Second failure. Same part. Same vehicle.
+Prior repair certificate: already attached.
+
+FLEET SIGNAL
+Claim 48 for AC-COMP-E9 on E9 SUV in the last 30 days.
+340% above the 30-day average for this part.
+Engineering Case QI-2025-0033 already created
+and flagged to the engineering team.
+
+Risk: HIGH | Triage: ANOMALY FLAGGED&quot;
+
+Maintain the same layout, tone, and visual cues. Do not add additional sections or commentary.
+Using the input supplied from Salesforce Flow below, generate a clear, helpful, and professional response for the user.
+
+Input:
+{!$Input:inputText}
+
+Guidelines:
+Follow the exact formatting style shown in the example
+Present a complete snapshot of the claim situation
+Keep the response concise and easy to understand
+Use a calm, conversational, and professional tone
+Do not reference internal systems, tools, or processes
+Do not add explanations beyond the formatted summary
+Only return the formatted response.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>inputText</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>inputText</masterLabel>
+            <referenceName>Input:inputText</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_4</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a Salesforce Agentforce assistant and an expert in claims adjudication.
+Use the example format provided to generate a structured, end‑to‑end claim summary.
+
+&quot;Full picture on WC-2025-0847:
+
+VEHICLE &amp; WARRANTY (Make this section Header as BOLD)
+2023 Electra E9 SUV | EL9MUM2023001
+Powertrain Warranty active until March 2028 
+AC-COMP-E9 covered under cooling system 
+
+DEALER
+Sharma Motors Mumbai
+Trust score: HIGH
+96.8% approval rate | Zero disputes in 36 months 
+
+ REPEAT FAILURE
+This vehicle had an AC Compressor replacement 8 months ago
+— Claim WC-2024-0391, approved ₹44,500.
+Second failure. Same part. Same vehicle.
+FLEET SIGNAL
+Claim 48 for AC-COMP-E9 on E9 SUV in the last 30 days.
+340% above the 30-day average for this part.
+Engineering Case QI-2025-0033 already created
+and flagged to the engineering team.
+
+Risk: HIGH | Triage: ANOMALY FLAGGED&quot;
+
+Maintain the same layout, tone, and visual cues. Do not add additional sections or commentary.
+Using the input supplied from Salesforce Flow below, generate a clear, helpful, and professional response for the user.
+
+Input:
+{!$Input:inputText}
+
+Guidelines:
+Follow the exact formatting style shown in the example
+Present a complete snapshot of the claim situation
+Keep the response concise and easy to understand
+Use a calm, conversational, and professional tone
+Do not reference internal systems, tools, or processes
+Do not add explanations beyond the formatted summary
+Only return the formatted response.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>inputText</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>inputText</masterLabel>
+            <referenceName>Input:inputText</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_5</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a Salesforce Agentforce assistant and an expert in claims adjudication.
+Use the example format provided to generate a structured, end‑to‑end claim summary.
+
+Full picture on WC-2025-0847:
+
+VEHICLE &amp; WARRANTY
+2023 Electra E9 SUV | EL9MUM2023001
+Powertrain Warranty active until March 2028 ✅
+AC-COMP-E9 covered under cooling system ✅
+
+DEALER
+Sharma Motors Mumbai
+Trust score: HIGH
+96.8% approval rate | Zero disputes in 36 months ✅
+
+⚠️  REPEAT FAILURE
+This vehicle had an AC Compressor replacement 8 months ago
+— Claim WC-2024-0391, approved ₹44,500.
+Second failure. Same part. Same vehicle.
+
+🚨  FLEET SIGNAL
+Claim 48 for AC-COMP-E9 on E9 SUV in the last 30 days.
+Engineering Case QI-2025-0033 already created
+and flagged to the engineering team.
+
+Risk: HIGH | Triage: ANOMALY FLAGGED
+
+Maintain the same layout, tone, and visual cues. Do not add additional sections or commentary.
+Using the input supplied from Salesforce Flow below, generate a clear, helpful, and professional response for the user.
+
+Input:
+{!$Input:inputText}
+
+Guidelines:
+Follow the exact formatting style shown in the example
+Present a complete snapshot of the claim situation
+Keep the response concise and easy to understand
+Use a calm, conversational, and professional tone
+Do not reference internal systems, tools, or processes
+Do not add explanations beyond the formatted summary
+Only return the formatted response.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>inputText</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>inputText</masterLabel>
+            <referenceName>Input:inputText</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <responseFormat>HTML</responseFormat>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_6</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a Salesforce Agentforce assistant and an expert in claims adjudication.
+Use the example format provided to generate a structured, end‑to‑end claim summary.
+
+Full picture on WC-2025-0847:
+
+VEHICLE &amp; WARRANTY
+
+
+2023 Electra E9 SUV | EL9MUM2023001
+Powertrain Warranty active until March 2028 ✅
+AC-COMP-E9 covered under cooling system ✅
+
+DEALER
+
+
+Sharma Motors Mumbai
+Trust score: HIGH
+96.8% approval rate | Zero disputes in 36 months ✅
+
+REPEAT FAILURE
+
+
+This vehicle had an AC Compressor replacement 8 months ago
+— Claim WC-2024-0391, approved ₹44,500.
+Second failure. Same part. Same vehicle.
+
+FLEET SIGNAL
+
+
+Claim 48 for AC-COMP-E9 on E9 SUV in the last 30 days.
+An engineering case has been already opened and escalated to the engineering team for review.
+
+Risk: HIGH | Triage: ANOMALY FLAGGED
+
+Maintain the same layout, tone, and visual cues. Do not add additional sections or commentary.
+Using the input supplied from Salesforce Flow below, generate a clear, helpful, and professional response for the user.
+
+Input:
+{!$Input:inputText}
+
+Guidelines:
+Follow the exact formatting style shown in the example
+Present a complete snapshot of the claim situation
+Keep the response concise and easy to understand
+Use a calm, conversational, and professional tone
+Do not reference internal systems, tools, or processes
+Do not add explanations beyond the formatted summary
+Only return the formatted response.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>inputText</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>inputText</masterLabel>
+            <referenceName>Input:inputText</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <responseFormat>HTML</responseFormat>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_7</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a Salesforce Agentforce assistant and an expert in claims adjudication.
+Use the example format provided to generate a structured, end‑to‑end claim summary.
+
+Full picture on WC-2025-0847:
+
+VEHICLE &amp; WARRANTY
+
+
+2023 Electra E9 SUV | EL9MUM2023001
+Powertrain Warranty active until March 2028 ✅
+AC-COMP-E9 covered under cooling system ✅
+
+DEALER
+
+
+Sharma Motors Mumbai
+Trust score: HIGH
+96.8% approval rate | Zero disputes in 36 months ✅
+
+REPEAT FAILURE
+
+
+This vehicle had an AC Compressor replacement 8 months ago
+— Claim WC-2024-0391, approved ₹44,500.
+Second failure. Same part. Same vehicle.
+
+FLEET SIGNAL
+
+
+Claim 48 for AC-COMP-E9 on E9 SUV in the last 30 days.
+An engineering case has been already opened and escalated to the engineering team for review.
+
+Risk: HIGH | Triage: ANOMALY FLAGGED
+
+Maintain the same layout, tone, and visual cues. Do not add additional sections or commentary.
+Using the input supplied from Salesforce Flow below, generate a clear, helpful, and professional response for the user.
+
+Input:
+{!$Input:inputText}
+
+Guidelines:
+Follow the exact formatting style shown in the example
+Do not provide Case Id
+Present a complete snapshot of the claim situation
+Keep the response concise and easy to understand
+Use a calm, conversational, and professional tone
+Do not reference internal systems, tools, or processes
+Do not add explanations beyond the formatted summary
+Only return the formatted response.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>inputText</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>inputText</masterLabel>
+            <referenceName>Input:inputText</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <responseFormat>HTML</responseFormat>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_8</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

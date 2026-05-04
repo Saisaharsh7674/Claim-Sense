@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_9</activeVersionIdentifier>
+    <developerName>Warranty_Memory_Checker</developerName>
+    <masterLabel>Warranty Memory Checker</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: 
+
+Retrieved Observations from Organizational Memory:
+
+Provide a synthesis in this exact format:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Warranty_Observation</apiName>
+            <definition>SOBJECT://Warranty_Observation__c</definition>
+            <masterLabel>Warranty_Observation__c</masterLabel>
+            <referenceName>Input:Warranty_Observation</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: {!$Input:Query}
+
+Retrieved Observations from Organizational Memory:
+
+Provide a synthesis in this exact format:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: {!$Input:Query}
+
+Retrieved Observations from Organizational Memory:
+{!$EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198.results}
+
+
+Provide a synthesis in this exact format:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</definition>
+            <label>Warranty Memory Retriever</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Observation_Name&quot;,&quot;Observation_Note&quot;,&quot;Novelty&quot;,&quot;Decision_Pattern&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>10</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_3</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: {!$Input:Query}
+
+Retrieved Observations from Organizational Memory:
+{!$EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198.results}
+
+
+Provide a synthesis in this exact format and take an example below:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+ClaimSense Memory — from 47 similar adjudications:
+
+&apos;Thermal seal failure pattern consistent with March-June 2023
+production batch. Uniform approver recommendation: approve
+and escalate to engineering. No fraud signals detected
+across any similar claim in this cohort.&apos;
+
+Memory confidence: HIGH | Novelty: Commonplace — established precedent
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</definition>
+            <label>Warranty Memory Retriever</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Observation_Name&quot;,&quot;Observation_Note&quot;,&quot;Novelty&quot;,&quot;Decision_Pattern&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>10</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_4</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: {!$Input:Query}
+
+Retrieved Observations from Organizational Memory:
+{!$EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198.results}
+
+
+Provide a synthesis in this exact format and take an example below:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+💡 ClaimSense Memory — from 47 similar adjudications:
+
+&apos;Thermal seal failure pattern consistent with March-June 2023
+production batch. Uniform approver recommendation: approve
+and escalate to engineering. No fraud signals detected
+across any similar claim in this cohort.&apos;
+
+Memory confidence: HIGH | Novelty: Commonplace — established precedent
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <responseFormat>HTML</responseFormat>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</definition>
+            <label>Warranty Memory Retriever</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Observation_Name&quot;,&quot;Observation_Note&quot;,&quot;Novelty&quot;,&quot;Decision_Pattern&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>10</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_5</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: {!$Input:Query}
+
+Retrieved Observations from Organizational Memory:
+{!$EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198.results}
+
+
+Provide a synthesis in this exact format and take an example below:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+💡 ClaimSense Memory — from 47 similar adjudications:
+
+&apos;Thermal seal failure pattern consistent with March-June 2023
+production batch. Uniform approver recommendation: approve
+and escalate to engineering. No fraud signals detected
+across any similar claim in this cohort.&apos;
+
+Memory confidence: HIGH | Novelty: Commonplace — established precedent
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <responseFormat>HTML</responseFormat>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</definition>
+            <label>Warranty Memory Retriever</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Observation_Name&quot;,&quot;Observation_Note&quot;,&quot;Novelty&quot;,&quot;Decision_Pattern&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>10</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_6</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: {!$Input:Query}
+
+Retrieved Observations from Organizational Memory:
+{!$EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198.results}
+
+
+Provide a synthesis in this exact format and take an example below:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+💡 ClaimSense Memory — from 47 similar adjudications:
+
+&apos;Thermal seal failure pattern consistent with March-June 2023
+production batch. Uniform approver recommendation: approve
+and escalate to engineering. No fraud signals detected
+across any similar claim in this cohort.&apos;
+
+Memory confidence: HIGH | Novelty: Commonplace — established precedent
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <responseFormat>HTML</responseFormat>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</definition>
+            <label>Warranty Memory Retriever</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Observation_Name&quot;,&quot;Observation_Note&quot;,&quot;Novelty&quot;,&quot;Decision_Pattern&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>10</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_7</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: {!$Input:Query}
+
+Retrieved Observations from Organizational Memory:
+{!$EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198.results}
+
+
+Provide a synthesis in this exact format and take an example below:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+💡 ClaimSense Memory — from 47 similar adjudications:
+
+&apos;Thermal seal failure pattern consistent with March-June 2023
+production batch. Uniform approver recommendation: approve
+and escalate to engineering. No fraud signals detected
+across any similar claim in this cohort.&apos;
+
+Memory confidence: HIGH | Novelty: Commonplace — established precedent
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <responseFormat>HTML</responseFormat>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</definition>
+            <label>Warranty Memory Retriever</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Observation_Name&quot;,&quot;Observation_Note&quot;,&quot;Novelty&quot;,&quot;Decision_Pattern&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>10</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_8</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: {!$Input:Query}
+
+Retrieved Observations from Organizational Memory:
+{!$EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198.results}
+
+
+Provide a synthesis in this exact format and take an example below:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+💡 ClaimSense Memory — from 47 similar adjudications:
+
+&apos;Thermal seal failure pattern consistent with March-June 2023
+production batch. Uniform approver recommendation: approve
+and escalate to engineering. No fraud signals detected
+across any similar claim in this cohort.&apos;
+
+Memory confidence: HIGH | Novelty: Commonplace — established precedent
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</definition>
+            <label>Warranty Memory Retriever</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Observation_Name&quot;,&quot;Observation_Note&quot;,&quot;Novelty&quot;,&quot;Decision_Pattern&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>10</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_9</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are ClaimSense Memory — the institutional knowledge retrieval system for Electra Cars
+warranty operations. You have access to a library of warranty adjudication observations
+— structured insights extracted from past warranty claim decisions.
+
+Your job is to retrieve and synthesize relevant memory for the current query.
+
+User Query: {!$Input:Query}
+
+Retrieved Observations from Organizational Memory:
+{!$EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198.results}
+
+
+Provide a synthesis in this exact format and take an example below:
+
+From [N] similar adjudications in ClaimSense memory:
+&quot;[2-3 sentence synthesis that captures the dominant pattern, key recommendations,
+and any important caveats. Write in past tense. Be specific — cite patterns, not vague generalities.
+Example: &apos;Thermal seal failure on AC-COMP-E9 on E9 SUV has been uniformly approved when vehicle is
+under active powertrain warranty. Approvers consistently noted batch defect pattern from March-June 2023
+production. No fraud signals detected in this cohort.&apos;&quot;]
+
+Memory confidence: [HIGH/MEDIUM/LOW based on number and consistency of retrieved observations]
+Novelty: [Commonplace/Distinctive/Entirely Unique based on pattern consistency]
+
+If fewer than 3 relevant observations are retrieved, respond:
+&quot;Insufficient memory for this pattern. This may be a novel failure type.&quot;
+
+💡 ClaimSense Memory — from 47 similar adjudications:
+
+&apos;Thermal seal failure pattern consistent with March-June 2023
+production batch. Uniform approver recommendation: approve
+and escalate to engineering. No fraud signals detected
+across any similar claim in this cohort.&apos;
+
+Memory confidence: HIGH | Novelty: Commonplace — established precedent
+
+IMPORTANT:
+- Return ONLY what the memory shows. Do not speculate or add information not in the observations.
+- If observations conflict, note the conflict and present the majority view.
+- Keep the synthesis under 100 words.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>false</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <responseFormat>HTML</responseFormat>
+        <status>Draft</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</definition>
+            <label>Warranty Memory Retriever</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Observation_Name&quot;,&quot;Observation_Note&quot;,&quot;Novelty&quot;,&quot;Decision_Pattern&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>10</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_10</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

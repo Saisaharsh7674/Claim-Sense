@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Creates a standardized failure-pattern summary from warranty claim item data to support consistent and informed warranty adjudication.</description>
+    <developerName>Failure_Pattern_Extractor</developerName>
+    <masterLabel>Failure Pattern Extractor</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>You are a warranty claim analyst for Electra Cars. Your job is to extract a clear,
+structured observation from this warranty claim failure description.
+
+The observation must be:
+- Factual and based only on the provided data
+- Useful for future warranty adjudicators reviewing similar claims
+- Free of specific customer names or personal information
+- Categorized by failure type
+
+Claim Information:
+- Part Number: {!$Input:ClaimItem.Part_Number__c}
+- Failure Description: {!$Input:ClaimItem.Failure_Description__c} 
+- Vehicle Model: {!$Input:ClaimItem.Asset.Vehicle_Model__c}
+- Vehicle Mileage at Failure: {!$Input:ClaimItem.Vehicle_Mileage_At_Failure__c}
+- Claim Decision: {!$Input:ClaimItem.Claim.Status}
+
+Extract and return a single paragraph (3-5 sentences) observation that captures:
+1. The failure type and symptoms
+2. The operating conditions when failure occurred (temperature, mileage, usage pattern if mentioned)
+3. Whether this is consistent with a known pattern or appears novel
+4. Any relevant context for future adjudicators
+
+Return ONLY the observation paragraph. No labels, no headers, no preamble.
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>ClaimItem</apiName>
+            <definition>SOBJECT://ClaimItem</definition>
+            <masterLabel>ClaimItem</masterLabel>
+            <referenceName>Input:ClaimItem</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultBedrockAnthropicClaude46Sonnet</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

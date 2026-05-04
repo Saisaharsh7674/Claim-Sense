@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_1</activeVersionIdentifier>
+    <developerName>Novelty_Judge</developerName>
+    <masterLabel>Novelty Judge</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>You are a novelty evaluator for warranty observation records.
+
+Your job is to classify whether a new observation is unique compared to existing
+observations in our organizational memory.
+
+New Observation to Evaluate:
+- Observation Name: {!$Input:Warranty_Observation.Name}
+- Observation Note: {!$Input:Warranty_Observation.Observation_Note__c}
+- Part Number: {!$Input:Warranty_Observation.Part_Number__c}
+- Vehicle Model: {!$Input:Warranty_Observation.Vehicle_Model__c}
+
+Comparison Observations (from organizational memory):
+ {!$EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198.results} 
+
+Apply these classification rules:
+- &quot;Exact Duplicate&quot;: The new observation describes the same event as an existing one (same claim)
+- &quot;Commonplace&quot;: The pattern is semantically similar to multiple existing observations
+- &quot;Distinctive&quot;: The observation introduces a new variation on a known theme
+- &quot;Entirely Unique&quot;: The observation describes something not seen before in memory
+- &quot;Flagged for Review&quot;: If you cannot determine the appropriate category
+
+Respond with ONLY ONE of these exact values:
+Exact Duplicate, Commonplace, Distinctive, Entirely Unique, Flagged for Review
+
+No explanation. No punctuation. No whitespace. Just the value.
+
+</content>
+        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
+        <inputs>
+            <apiName>Warranty_Observation</apiName>
+            <definition>SOBJECT://Warranty_Observation__c</definition>
+            <masterLabel>Warranty Observation</masterLabel>
+            <referenceName>Input:Warranty_Observation</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</definition>
+            <label>Warranty Memory Retriever</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Warranty_Observation.Observation_Note__c}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Observation_Name&quot;,&quot;Observation_Note&quot;,&quot;Novelty&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>20</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:Warranty_Observation_Memory_Retriever_1Cx_D7ve9381198</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>KuKTFTzhj2V8LDH32aOe7gjiusGbzmKoq7oVtRHbHTE=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
