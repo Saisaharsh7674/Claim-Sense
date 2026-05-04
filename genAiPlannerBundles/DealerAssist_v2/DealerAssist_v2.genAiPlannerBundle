@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <attributeMappings>
+        <attributeName>Warranty_Claim_Submission_16j0e1095560e4d.Get_Vehicle_Warranty_Status_179ak000002zXsN.output_outputDealerAccountId</attributeName>
+        <attributeType>CustomPluginFunctionAttribute</attributeType>
+        <mappingTargetName>accountId</mappingTargetName>
+        <mappingType>Variable</mappingType>
+    </attributeMappings>
+    <attributeMappings>
+        <attributeName>Warranty_Claim_Submission_16j0e1095560e4d.Get_Vehicle_Warranty_Status_179ak000002zXsN.output_outputDealerContactId</attributeName>
+        <attributeType>CustomPluginFunctionAttribute</attributeType>
+        <mappingTargetName>contactId</mappingTargetName>
+        <mappingType>Variable</mappingType>
+    </attributeMappings>
+    <attributeMappings>
+        <attributeName>Warranty_Claim_Submission_16j0e1095560e4d.Create_Warranty_Claim_1792b61cbe89d3e.input_inputDealerAccountId</attributeName>
+        <attributeType>CustomPluginFunctionAttribute</attributeType>
+        <mappingTargetName>accountId</mappingTargetName>
+        <mappingType>Variable</mappingType>
+    </attributeMappings>
+    <attributeMappings>
+        <attributeName>Warranty_Claim_Submission_16j0e1095560e4d.Create_Warranty_Claim_1792b61cbe89d3e.input_inputDealerContactId</attributeName>
+        <attributeType>CustomPluginFunctionAttribute</attributeType>
+        <mappingTargetName>contactId</mappingTargetName>
+        <mappingType>Variable</mappingType>
+    </attributeMappings>
+    <description>Electra Cars warranty prior-authorization assistant for authorized dealers. Helps dealers submit warranty claims via WhatsApp and web chat.</description>
+    <localActionLinks>
+        <genAiFunctionName>AnswerQuestionsWithKnowledge_16j74decfcfc92b</genAiFunctionName>
+    </localActionLinks>
+    <localTopicLinks>
+        <genAiPluginName>Claim_Status_Check_16j09b22c3318c4</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Warranty_Claim_Submission_16j0e1095560e4d</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Warranty_Coverage_Query_16jfcef94887f25</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>Warranty_Claim_Submission_16j0e1095560e4d</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Use when a dealer wants to submit a new warranty prior‑authorization request for a vehicle repair or part replacement.</description>
+        <developerName>Warranty_Claim_Submission_16j0e1095560e4d</developerName>
+        <genAiPluginInstructions>
+            <description>Assist only authorized Electra Cars dealers and handle only warranty prior‑authorization requests. Do not handle billing, payments, vehicle pricing, legal, or any non‑warranty queries. If a request falls outside the supported scope, clearly direct the dealer to electracars.com/support. This assistant can support only Electra Cars vehicles.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Maintain a professional, efficient, and reassuring tone throughout the interaction. Speak like a knowledgeable colleague rather than a robot. Be concise, as dealers are often speaking with customers simultaneously. Use simple language and avoid jargon.</description>
+            <developerName>instruction_10</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 10</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Begin by greeting the dealer by name if the information is available in the session context, then ask for the vehicle VIN. Use the &quot;Get Vehicle Warranty Status&quot; action with the provided VIN. If the vehicle is not found or if the warranty is inactive or expired, clearly and empathetically explain the situation and stop the process without proceeding further. If the warranty is active, confirm the vehicle model, the dealer name, the warranty type, the warranty expiry, and the covered categories before continuing.</description>
+            <developerName>instruction_11</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 11</masterLabel>
+            <sortOrder>2</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Ask which part needs replacement and collect the part number and/or part description. Immediately after receiving the part details, use the &quot;Get Claim Predict Score&quot; action with the part number and the vehicle model obtained from the VIN validation. Before collecting any failure details, share the ClaimPredict results with the dealer, including the approval probability percentage and the estimated payout range with both minimum and maximum payout values in rupees. Mention the sample size if available, and if historical data is unavailable, clearly state that there is insufficient historical data available.</description>
+            <developerName>instruction_2</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 2</masterLabel>
+            <sortOrder>3</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>After sharing the ClaimPredict results, collect a clear failure description along with the current vehicle mileage. If the dealer mentions that the vehicle was modified or involved in an accident, ensure this information is explicitly included in the failure description, as it may affect warranty coverage.</description>
+            <developerName>instruction_3</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 3</masterLabel>
+            <sortOrder>4</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Once all required information is collected, use the &quot;Create Warranty Claim&quot; action to submit the warranty prior‑authorization request. If the action indicates that a prior claim exists for the same part, inform the dealer that the vehicle previously had that part replaced under the referenced prior claim.</description>
+            <developerName>instruction_4</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 4</masterLabel>
+            <sortOrder>5</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Confirm successful submission by sharing the claim reference number. Inform the dealer that they will receive a notification update when a decision is made and do not promise any specific timeline, stating only that the claim will be reviewed. Never create a claim without first validating the vehicle warranty, always share ClaimPredict results before collecting failure details, and never fabricate claim numbers, approval rates, or payout values.</description>
+            <developerName>instruction_5</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 5</masterLabel>
+            <sortOrder>6</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Create_Warranty_Claim_1792b61cbe89d3e</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Get_Claim_Predict_Score_179c6ecfc22cf28</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Get_Vehicle_Warranty_Status_179ak000002zXsN</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Get_Vehicle_Warranty_Status_179ak000002zXsN</fullName>
+            <description>Validates a vehicle VIN, returns warranty status and coverage details for DealerAssist agent</description>
+            <developerName>Get_Vehicle_Warranty_Status_179ak000002zXsN</developerName>
+            <invocationTarget>Get_Vehicle_Warranty_Status</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Get_Vehicle_Warranty_Status</localDeveloperName>
+            <mappingAttributes>
+                <label>outputDealerAccountId</label>
+                <name>output_outputDealerAccountId</name>
+                <parameterName>outputDealerAccountId</parameterName>
+                <parameterType>output</parameterType>
+            </mappingAttributes>
+            <mappingAttributes>
+                <label>outputDealerContactId</label>
+                <name>output_outputDealerContactId</name>
+                <parameterName>outputDealerContactId</parameterName>
+                <parameterType>output</parameterType>
+            </mappingAttributes>
+            <masterLabel>Get Vehicle Warranty Status</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>Create_Warranty_Claim_1792b61cbe89d3e</fullName>
+            <description>Creates a warranty prior-authorization Claim with ClaimItem and ClaimParticipant records. Performs vehicle lookup, prior-claim detection, fleet anomaly scoring, and risk triage.</description>
+            <developerName>Create_Warranty_Claim_1792b61cbe89d3e</developerName>
+            <invocationTarget>CreateWarrantyClaimAction</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Create_Warranty_Claim</localDeveloperName>
+            <mappingAttributes>
+                <label>inputDealerAccountId</label>
+                <name>input_inputDealerAccountId</name>
+                <parameterName>inputDealerAccountId</parameterName>
+                <parameterType>input</parameterType>
+            </mappingAttributes>
+            <mappingAttributes>
+                <label>inputDealerContactId</label>
+                <name>input_inputDealerContactId</name>
+                <parameterName>inputDealerContactId</parameterName>
+                <parameterType>input</parameterType>
+            </mappingAttributes>
+            <masterLabel>Create Warranty Claim</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>Get_Claim_Predict_Score_179c6ecfc22cf28</fullName>
+            <description>Queries historical Claim and ClaimItem data for a given vehicle model and part number, then returns approval-rate and payout statistics to support warranty claim decisions.</description>
+            <developerName>Get_Claim_Predict_Score_179c6ecfc22cf28</developerName>
+            <invocationTarget>GetClaimPredictScoreAction</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Get_Claim_Predict_Score</localDeveloperName>
+            <masterLabel>Get Claim Predict Score</masterLabel>
+        </localActions>
+        <localDeveloperName>Warranty_Claim_Submission</localDeveloperName>
+        <masterLabel>Warranty Claim Submission</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Guide authorized Electra Cars dealers through the complete warranty prior‑authorization process, including VIN validation, claim prediction, documentation handling, and claim creation.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Warranty_Coverage_Query_16jfcef94887f25</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Use this subagent when a dealer asks what is covered, excluded, or eligible under a vehicle’s warranty.</description>
+        <developerName>Warranty_Coverage_Query_16jfcef94887f25</developerName>
+        <genAiPluginInstructions>
+            <description>When a dealer asks about what is covered under a vehicle’s warranty, ask for the vehicle VIN if it is not already available. Call the &quot;Validate Vehicle Warranty&quot; action using the provided VIN to retrieve warranty details. If the warranty is inactive or expired, clearly inform the dealer and stop further explanation. If the warranty is active, explain the covered categories and exclusions clearly and plainly, using simple and easy‑to‑understand language.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>Warranty_Coverage_Query</localDeveloperName>
+        <masterLabel>Warranty Coverage Query</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Explain Electra Cars warranty coverage details, including what parts or categories are covered or excluded.</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Claim_Status_Check_16j09b22c3318c4</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Use this subagent when a dealer asks about the status, progress, or decision of an already submitted warranty claim.</description>
+        <developerName>Claim_Status_Check_16j09b22c3318c4</developerName>
+        <genAiPluginInstructions>
+            <description>When a dealer asks about the status of an existing warranty claim, ask for the claim reference number if it is not already provided. Once the claim reference number is available, call the &quot;Check Claim Status&quot; action using that reference number to retrieve the claim details. Share the retrieved information with the dealer, including the current claim status, the last updated date, and any approver or reviewer notes associated with the claim.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>If the retrieved information indicates that further action is required from the dealer, clearly explain the next steps. Do not estimate approval timelines, do not predict approval or rejection, and do not provide outcome assumptions.</description>
+            <developerName>instruction_2</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 2</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Check_Claim_Status_179f8370d166414</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Check_Claim_Status_179f8370d166414</fullName>
+            <description>Gets the current status of an existing warranty claim by claim reference number. Returns status, last updated date, and approver notes.</description>
+            <developerName>Check_Claim_Status_179f8370d166414</developerName>
+            <invocationTarget>Check_Claim_Status</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Check_Claim_Status</localDeveloperName>
+            <masterLabel>Check Claim Status</masterLabel>
+        </localActions>
+        <localDeveloperName>Claim_Status_Check</localDeveloperName>
+        <masterLabel>Claim Status Check</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Provide dealers with the current status of an existing Electra Cars warranty prior-authorization claim.</scope>
+    </localTopics>
+    <masterLabel>DealerAssist</masterLabel>
+    <plannerActions>
+        <fullName>AnswerQuestionsWithKnowledge_16j74decfcfc92b</fullName>
+        <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+        <developerName>AnswerQuestionsWithKnowledge_16j74decfcfc92b</developerName>
+        <invocationTarget>streamKnowledgeSearch</invocationTarget>
+        <invocationTargetType>standardInvocableAction</invocationTargetType>
+        <isConfirmationRequired>false</isConfirmationRequired>
+        <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+        <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+        <masterLabel>Answer Questions with Knowledge</masterLabel>
+        <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+        <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+    </plannerActions>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__Messaging</surface>
+        <surfaceType>Messaging</surfaceType>
+    </plannerSurfaces>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__CustomerWebClient</surface>
+        <surfaceType>CustomerWebClient</surfaceType>
+    </plannerSurfaces>
+    <plannerType>AiCopilot__ReAct</plannerType>
+    <ruleExpressions>
+        <conditions>
+            <leftOperand>isVerified</leftOperand>
+            <leftOperandType>Variable</leftOperandType>
+            <operator>equal</operator>
+            <rightOperandValue>true</rightOperandValue>
+        </conditions>
+        <expression>Verified_User</expression>
+        <expressionLabel>Verified User</expressionLabel>
+        <expressionName>Verified_User</expressionName>
+        <expressionType>sel</expressionType>
+    </ruleExpressions>
+</GenAiPlannerBundle>

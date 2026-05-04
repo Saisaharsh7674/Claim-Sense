@@ -1,0 +1,60 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "outputApprovalRate" : {
+      "title" : "Approval Rate",
+      "description" : "Percentage of approved claims vs total claims for the vehicle model (1 decimal place)",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputAvgPayout" : {
+      "title" : "Average Payout",
+      "description" : "Average payout amount from approved claims matching the part number (0 decimal places)",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputDataAvailable" : {
+      "title" : "Data Available",
+      "description" : "False if no historical claims were found for the vehicle model",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputMaxPayout" : {
+      "title" : "Maximum Payout",
+      "description" : "Maximum payout amount from approved claims matching the part number (0 decimal places)",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputMinPayout" : {
+      "title" : "Minimum Payout",
+      "description" : "Minimum payout amount from approved claims matching the part number (0 decimal places)",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputSampleSize" : {
+      "title" : "Sample Size",
+      "description" : "Number of matching approved ClaimItems used to compute payout statistics",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

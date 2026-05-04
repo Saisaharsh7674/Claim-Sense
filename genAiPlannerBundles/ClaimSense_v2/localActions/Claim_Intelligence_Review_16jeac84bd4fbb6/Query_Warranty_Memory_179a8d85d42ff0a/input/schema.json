@@ -1,0 +1,13 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputQuery" : {
+      "title" : "inputQuery",
+      "description" : "Search or analysis query constructed by the agent using claim number to retrieve relevant historical knowledge or memory.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

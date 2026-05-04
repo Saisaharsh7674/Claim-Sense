@@ -1,0 +1,21 @@
+{
+  "required" : [ "inputClaimId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputClaimId" : {
+      "title" : "inputClaimId",
+      "description" : "Internal unique identifier for the warranty claim, such as a Salesforce record ID or system-generated claim key. Used for precise data retrieval when available; may be derived by the system from the claim reference.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputClaimName" : {
+      "title" : "inputClaimName",
+      "description" : "Warranty claim reference provided by the user. May be expressed as a numeric value (847, 0847) or a prefixed format such as WC-2026-0847. All formats refer to the same claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

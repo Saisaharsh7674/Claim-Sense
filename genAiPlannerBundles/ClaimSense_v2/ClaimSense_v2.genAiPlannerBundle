@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <description>Intelligent co-pilot for Electra Cars warranty claims adjudicators. Works in Slack and Salesforce sidebar. Provides claim intelligence, semantic memory recall, and executes approval decisions.</description>
+    <localActionLinks>
+        <genAiFunctionName>AnswerQuestionsWithKnowledge_16j7ce6ccad4d0d</genAiFunctionName>
+    </localActionLinks>
+    <localTopicLinks>
+        <genAiPluginName>Claim_Approval_Decision_16j837c22bed6aa</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Claim_Intelligence_Review_16jeac84bd4fbb6</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Fleet_Anomaly_Investigation_16j9c930733a4af</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Queue_Summary_16j8f14ddba6d8f</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>Fleet_Anomaly_Investigation_16j9c930733a4af</fullName>
+        <aiPluginUtterances>
+            <developerName>utterance_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Utterance 1</masterLabel>
+            <utterance>&quot;What&apos;s the fleet situation for AC compressors?&quot;
+  &quot;How many E9 SUV claims this month?&quot;
+  &quot;What does engineering know about this?&quot;
+  &quot;Is there an open investigation for this part?&quot;</utterance>
+        </aiPluginUtterances>
+        <canEscalate>false</canEscalate>
+        <description>Use when the approver asks about fleet patterns, anomalies, engineering cases, or want to understand a pattern across vehicles</description>
+        <developerName>Fleet_Anomaly_Investigation_16j9c930733a4af</developerName>
+        <genAiPluginInstructions>
+            <description>- Query fleet data using Get Claim Intelligence with fleet focus.
+  - Surface engineering cases.
+  - Query warranty memory for fleet-level observations.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Get_Claim_Intelligence_179ac73167754dc</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Query_Warranty_Memory_179bca861fcea4f</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Get_Claim_Intelligence_179ac73167754dc</fullName>
+            <description>Returns complete intelligence package for a claim for approver review</description>
+            <developerName>Get_Claim_Intelligence_179ac73167754dc</developerName>
+            <invocationTarget>Get_Claim_Intelligence</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Get_Claim_Intelligence</localDeveloperName>
+            <masterLabel>Get_Claim_Intelligence</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>Query_Warranty_Memory_179bca861fcea4f</fullName>
+            <description>Retrieve fleet-level observations from the Learning Loop.</description>
+            <developerName>Query_Warranty_Memory_179bca861fcea4f</developerName>
+            <invocationTarget>Query_Warranty_Memory</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Query_Warranty_Memory</localDeveloperName>
+            <masterLabel>Query Warranty Memory</masterLabel>
+        </localActions>
+        <localDeveloperName>Fleet_Anomaly_Investigation</localDeveloperName>
+        <masterLabel>Fleet Anomaly Investigation</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Surface fleet-level intelligence about failure patterns, engineering cases, and cross-vehicle anomalies</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Claim_Approval_Decision_16j837c22bed6aa</fullName>
+        <aiPluginUtterances>
+            <developerName>utterance_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Utterance 1</masterLabel>
+            <utterance>&quot;Approve claim 847&quot;
+&quot;Approve WC-2025-0847&quot;
+&quot;Reject this claim&quot;
+&quot;Approve it&quot;
+&quot;Go ahead and approve&quot;
+&quot;Reject the Sharma Motors claim - warranty doesn&apos;t cover this&quot;</utterance>
+        </aiPluginUtterances>
+        <canEscalate>false</canEscalate>
+        <description>Use when the approver says to approve or reject a claim, or asks to execute a decision on a claim</description>
+        <developerName>Claim_Approval_Decision_16j837c22bed6aa</developerName>
+        <genAiPluginInstructions>
+            <description>- Parse the claim name/number from the user&apos;s message.
+- Parse the decision (approved/rejected) from the user&apos;s message.
+- Call Approve_Or_Reject_Claim action.
+- Confirm all actions executed: approval, dealer notification, case update, audit trail.
+- For anomaly-flagged claims: confirm engineering case was updated.
+- Display below messages along with success message
+Dealer notified on Salesforce Mobile
+Engineering case updated
+Institutional memory enriched for future decisions</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <genAiPluginInstructions>
+            <description>Ensure that the following messages are displayed in the final response after confirming the approval or rejection: &apos;Dealer notified on Salesforce Mobile,&apos; &apos;Engineering case updated,&apos; and &apos;Institutional memory enriched for future decisions.</description>
+            <developerName>instructions_0_1777827556285</developerName>
+            <language>en_US</language>
+            <masterLabel>instructions_0_1777827556285</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Approve_Or_Reject_Claim_From_Agent_179ak0000030EpH</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Approve_Or_Reject_Claim_From_Agent_179ak0000030EpH</fullName>
+            <description>Execute approval or rejection decision for a warranty claim. Updates claim status, notifies dealer via WhatsApp, updates engineering cases, creates claim participant record for approver, and triggers Learning Loop.</description>
+            <developerName>Approve_Or_Reject_Claim_From_Agent_179ak0000030EpH</developerName>
+            <invocationTarget>Approve_Or_Reject_Claim_From_Agent</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Approve_Or_Reject_Claim_From_Agent</localDeveloperName>
+            <masterLabel>Approve_Or_Reject_Claim_From_Agent</masterLabel>
+        </localActions>
+        <localDeveloperName>Claim_Approval_Decision</localDeveloperName>
+        <masterLabel>Claim Approval Decision</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Execute approval or rejection decisions, update records, notify dealers, and update engineering cases</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Queue_Summary_16j8f14ddba6d8f</fullName>
+        <aiPluginUtterances>
+            <developerName>utterance_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Utterance 1</masterLabel>
+            <utterance>&quot;What&apos;s in my queue?&quot;
+  &quot;How many claims do I have today?&quot;
+  &quot;What should I look at first?&quot;
+  &quot;Show me the high-priority claims&quot;</utterance>
+        </aiPluginUtterances>
+        <canEscalate>false</canEscalate>
+        <description>Use when the approver asks about their pending claims, their workload, or wants a prioritized view of what to work on</description>
+        <developerName>Queue_Summary_16j8f14ddba6d8f</developerName>
+        <genAiPluginInstructions>
+            <description>- Query open Claim records with Status = Submitted or Under Review.
+  - Group by Triage_Category__c.
+  - Present anomaly-flagged claims first, then complex, then standard.
+  - Be concise — give counts and top items, not full details.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Get_Queue_Summary_Flow_179cf85aec3cb5e</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Get_Queue_Summary_Flow_179cf85aec3cb5e</fullName>
+            <description>Retrieve counts of all open warranty claims grouped by risk score,  triage category, and anomaly flag. Returns a pre-formatted summary string for the agent to present in Slack.</description>
+            <developerName>Get_Queue_Summary_Flow_179cf85aec3cb5e</developerName>
+            <invocationTarget>Get_Queue_Summary_Flow</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Get_Queue_Summary_Flow</localDeveloperName>
+            <masterLabel>Get Queue Summary Flow</masterLabel>
+        </localActions>
+        <localDeveloperName>Queue_Summary</localDeveloperName>
+        <masterLabel>Queue Summary</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Retrieve and prioritize all pending claims for the approver</scope>
+    </localTopics>
+    <localTopics>
+        <fullName>Claim_Intelligence_Review_16jeac84bd4fbb6</fullName>
+        <aiPluginUtterances>
+            <developerName>utterance_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Utterance 1</masterLabel>
+            <utterance>&quot;Tell me about claim 847&quot;
+&quot;Review WC-2026-0847&quot;
+&quot;Give me a complete review of claim 0847 including prior patterns&quot;
+&quot;What do I need to know about the AC compressor claim from Sharma Motors?&quot;
+&quot;Is this claim safe to approve?&quot;</utterance>
+        </aiPluginUtterances>
+        <canEscalate>false</canEscalate>
+        <description>Use when the approver wants to review a specific claim or understand its risk profile and recommendation</description>
+        <developerName>Claim_Intelligence_Review_16jeac84bd4fbb6</developerName>
+        <genAiPluginInstructions>
+            <description>- Call Get Claim Intelligence action first.
+- Then call Query Warranty Memory action with the claim number as query.
+- Present results in the structured sections defined in agent role.
+- Always include the semantic memory section if data is available.
+- Make a clear recommendation at the end.</description>
+            <developerName>instruction_1</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction 1</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Query_Warranty_Memory_179a8d85d42ff0a</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Get_Claim_Intelligence_179ak0000030EpF</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Get_Claim_Intelligence_179ak0000030EpF</fullName>
+            <description>Returns complete intelligence package for a claim for approver review</description>
+            <developerName>Get_Claim_Intelligence_179ak0000030EpF</developerName>
+            <invocationTarget>Get_Claim_Intelligence</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Get_Claim_Intelligence</localDeveloperName>
+            <masterLabel>Get_Claim_Intelligence</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>Query_Warranty_Memory_179a8d85d42ff0a</fullName>
+            <description>Retrieve institutional knowledge from prior warranty adjudications  using semantic memory. Call this after Get Claim Intelligence. Query should combine part number + vehicle model + failure type.</description>
+            <developerName>Query_Warranty_Memory_179a8d85d42ff0a</developerName>
+            <invocationTarget>Query_Warranty_Memory</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Query_Warranty_Memory</localDeveloperName>
+            <masterLabel>Query Warranty Memory</masterLabel>
+        </localActions>
+        <localDeveloperName>Claim_Intelligence_Review</localDeveloperName>
+        <masterLabel>Claim Intelligence Review</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Retrieve and present complete claim intelligence including vehicle data, dealer trust, fleet patterns, and semantic memory</scope>
+    </localTopics>
+    <masterLabel>ClaimSense</masterLabel>
+    <plannerActions>
+        <fullName>AnswerQuestionsWithKnowledge_16j7ce6ccad4d0d</fullName>
+        <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+        <developerName>AnswerQuestionsWithKnowledge_16j7ce6ccad4d0d</developerName>
+        <invocationTarget>streamKnowledgeSearch</invocationTarget>
+        <invocationTargetType>standardInvocableAction</invocationTargetType>
+        <isConfirmationRequired>false</isConfirmationRequired>
+        <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+        <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+        <masterLabel>Answer Questions with Knowledge</masterLabel>
+        <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+        <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+    </plannerActions>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <surface>SurfaceAction__Messaging</surface>
+        <surfaceType>Messaging</surfaceType>
+    </plannerSurfaces>
+    <plannerType>AiCopilot__ReAct</plannerType>
+</GenAiPlannerBundle>

@@ -1,0 +1,14 @@
+{
+  "required" : [ "inputClaimNumber" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputClaimNumber" : {
+      "title" : "inputClaimNumber",
+      "description" : "Claim Number",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

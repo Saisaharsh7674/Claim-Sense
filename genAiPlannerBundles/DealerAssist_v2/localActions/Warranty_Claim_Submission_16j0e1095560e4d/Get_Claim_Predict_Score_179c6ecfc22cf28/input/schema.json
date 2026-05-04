@@ -1,0 +1,21 @@
+{
+  "required" : [ "inputPartNumber", "inputVehicleModel" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputPartNumber" : {
+      "title" : "Part Number",
+      "description" : "Manufacturer part number for the component being evaluated",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputVehicleModel" : {
+      "title" : "Vehicle Model",
+      "description" : "Vehicle model to look up historical warranty claim data for",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

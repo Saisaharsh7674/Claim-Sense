@@ -1,0 +1,35 @@
+{
+  "required" : [ "inputClaimName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputApproverId" : {
+      "title" : "inputApproverId",
+      "description" : "Salesforce user ID of the claim approver executing the approval or\nrejection decision. Used for audit trail and participant records.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputApproverNotes" : {
+      "title" : "inputApproverNotes",
+      "description" : "Optional notes or justification provided by the approver when approving or rejecting the warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputClaimName" : {
+      "title" : "inputClaimName",
+      "description" : "Warranty claim reference extracted from the user message.\nSupports numeric and prefixed formats such as 847, 0847, or WC-2026-0847.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputDecision" : {
+      "title" : "inputDecision",
+      "description" : "Approval decision derived from the user's intent.\nExpected values are Approved or Rejected.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

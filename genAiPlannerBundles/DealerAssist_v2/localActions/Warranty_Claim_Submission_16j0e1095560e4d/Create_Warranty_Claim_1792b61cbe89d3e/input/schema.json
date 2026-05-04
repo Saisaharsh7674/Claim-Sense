@@ -1,0 +1,91 @@
+{
+  "required" : [ "inputChannel", "inputDealerAccountId", "inputDealerContactId", "inputEstimatedValue", "inputFailureDescription", "inputPartDescription", "inputPartNumber", "inputPredictedApprovalPct", "inputPredictedPayoutMax", "inputPredictedPayoutMin", "inputVehicleMileage", "inputVIN" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputChannel" : {
+      "title" : "Claim Channel",
+      "description" : "Channel through which the claim was initiated (default: WhatsApp)",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputDealerAccountId" : {
+      "title" : "Dealer Account Id",
+      "description" : "The Salesforce Account Id of the submitting dealer",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputDealerContactId" : {
+      "title" : "Dealer Contact Id",
+      "description" : "The Salesforce Contact Id of the dealer representative",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputEstimatedValue" : {
+      "title" : "Estimated Claim Value",
+      "description" : "Estimated total repair/replacement cost",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputFailureDescription" : {
+      "title" : "Failure Description",
+      "description" : "Detailed description of the failure or defect observed",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputPartDescription" : {
+      "title" : "Part Description",
+      "description" : "Human-readable description of the part",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputPartNumber" : {
+      "title" : "Part Number",
+      "description" : "Manufacturer part number for the failed component",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputPredictedApprovalPct" : {
+      "title" : "Predicted Approval Percentage",
+      "description" : "ML-predicted probability of claim approval",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputPredictedPayoutMax" : {
+      "title" : "Predicted Payout Maximum",
+      "description" : "ML-predicted maximum payout amount",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputPredictedPayoutMin" : {
+      "title" : "Predicted Payout Minimum",
+      "description" : "ML-predicted minimum payout amount",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputVehicleMileage" : {
+      "title" : "Vehicle Mileage at Failure",
+      "description" : "Odometer reading at time of failure",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputVIN" : {
+      "title" : "Vehicle Identification Number (VIN)",
+      "description" : "The serial number / VIN of the vehicle asset",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

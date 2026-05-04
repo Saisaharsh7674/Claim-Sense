@@ -1,0 +1,15 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "varMemoryResponse" : {
+      "title" : "varMemoryResponse",
+      "description" : "Summarized historical knowledge or memory related to the part, vehicle model, or failure pattern derived from previous claims, fleet trends, or engineering insights.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

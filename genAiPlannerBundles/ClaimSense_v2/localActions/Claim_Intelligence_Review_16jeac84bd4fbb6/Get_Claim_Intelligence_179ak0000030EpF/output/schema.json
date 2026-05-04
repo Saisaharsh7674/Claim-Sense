@@ -1,0 +1,249 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "claimIntelligenceOutput" : {
+      "title" : "claimIntelligenceOutput",
+      "description" : "Provide the detailed summary",
+      "lightning:type" : "lightning__richTextType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputAnomalyFlag" : {
+      "title" : "outputAnomalyFlag",
+      "description" : "Indicates whether the warranty claim exhibits anomalous, suspicious ,or high-risk patterns based on historical claims, fleet behavior, dealer performance, and engineering signals.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputClaimName" : {
+      "title" : "outputClaimName",
+      "description" : "Normalized warranty claim reference used by the system (e.g. 0847), regardless of how the user originally provided the claim identifier.\n",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputClaimStatus" : {
+      "title" : "outputClaimStatus",
+      "description" : "Current lifecycle status of the warranty claim, such as Submitted, In Review, Approved, Rejected, or Closed",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputClaimedAmount" : {
+      "title" : "outputClaimedAmount",
+      "description" : "Total monetary amount requested as part of the warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputDealerApprovalRate" : {
+      "title" : "outputDealerApprovalRate",
+      "description" : "Historical percentage of warranty claims approved for the associated dealer, used to assess dealer reliability.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputDealerName" : {
+      "title" : "outputDealerName",
+      "description" : "Name of the dealer or service center that submitted the warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputDealerTrustScore" : {
+      "title" : "outputDealerTrustScore",
+      "description" : "Calculated trust score for the dealer based on historical approval rates, compliance, and claim quality metrics.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputEngineeringCaseId" : {
+      "title" : "outputEngineeringCaseId",
+      "description" : "Internal system identifier for the related engineering investigation or analysis case associated with this warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputEngineeringCaseName" : {
+      "title" : "outputEngineeringCaseName",
+      "description" : "Human-readable reference or title of the engineering case linked to this warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputFailureDescription" : {
+      "title" : "outputFailureDescription",
+      "description" : "Summary of the reported failure or issue that triggered the warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputFleetCount30Days" : {
+      "title" : "outputFleetCount30Days",
+      "description" : "Number of similar warranty failures reported across the vehicle fleet within the last 30 days.",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputPartDescription" : {
+      "title" : "outputPartDescription",
+      "description" : "Description of the vehicle component or part associated with the reported warranty issue.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputPartNumber" : {
+      "title" : "outputPartNumber",
+      "description" : "Manufacturer or system part number related to the failed component.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputPriorClaimAmount" : {
+      "title" : "outputPriorClaimAmount",
+      "description" : "Claimed amount associated with the most recent prior related warranty claim, if one exists",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputPriorClaimDate" : {
+      "title" : "outputPriorClaimDate",
+      "description" : "Submission date of the most recent prior related warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputPriorClaimFound" : {
+      "title" : "outputPriorClaimFound",
+      "description" : "Indicates whether a previous related warranty claim was identified for the same vehicle, part, or failure type.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputPriorClaimName" : {
+      "title" : "outputPriorClaimName",
+      "description" : "Reference number of the most recent prior related warranty claim, if found.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputRecommendation" : {
+      "title" : "outputRecommendation",
+      "description" : "System-generated recommendation for handling the claim, such as Approve, Review Manually, Escalate, or Reject.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputRiskScore" : {
+      "title" : "outputRiskScore",
+      "description" : "Calculated risk score representing the likelihood of fraud, error, or abnormal behavior for this claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputTriageCategory" : {
+      "title" : "outputTriageCategory",
+      "description" : "Assigned triage category indicating the urgency or handling path for the warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputVehicleMileage" : {
+      "title" : "outputVehicleMileage",
+      "description" : "Recorded odometer reading or mileage of the vehicle at the time the warranty claim was submitted.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputVehicleModel" : {
+      "title" : "outputVehicleModel",
+      "description" : "Model designation of the vehicle associated with the warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputVehicleName" : {
+      "title" : "outputVehicleName",
+      "description" : "Customer-facing name or variant of the vehicle associated with the warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputVehicleVIN" : {
+      "title" : "outputVehicleVIN",
+      "description" : "Vehicle Identification Number (VIN) associated with the warranty claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputWarrantyExpiry" : {
+      "title" : "outputWarrantyExpiry",
+      "description" : "Warranty expiration date applicable to the vehicle at the time of claim evaluation.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputWarrantyStatus" : {
+      "title" : "outputWarrantyStatus",
+      "description" : "Indicates whether the vehicle warranty is Active, Expired, or Out of coverage at the time of the claim.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

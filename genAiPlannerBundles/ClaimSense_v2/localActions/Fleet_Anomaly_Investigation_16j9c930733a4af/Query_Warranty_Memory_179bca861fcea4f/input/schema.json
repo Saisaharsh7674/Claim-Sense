@@ -1,0 +1,14 @@
+{
+  "required" : [ "inputQuery" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputQuery" : {
+      "title" : "inputQuery",
+      "description" : "System-generated query built from part number and vehicle model (part number + model + \"fleet anomaly batch\") to retrieve fleet-level warranty memory.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

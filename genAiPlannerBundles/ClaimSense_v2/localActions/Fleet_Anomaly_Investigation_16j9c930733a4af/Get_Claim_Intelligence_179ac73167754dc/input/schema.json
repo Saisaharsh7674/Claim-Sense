@@ -1,0 +1,20 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputClaimId" : {
+      "title" : "inputClaimId",
+      "description" : "Unique identifier of the claim to be analyzed. Ask the user to provide the Claim ID if available; otherwise this can be left blank and the system may resolve the latest relevant claim automatically.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputClaimName" : {
+      "title" : "inputClaimName",
+      "description" : "Name or reference of a known claim associated with the selected part and vehicle model. If no claim name is provided, the system will use the most recent relevant claim from the queue.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

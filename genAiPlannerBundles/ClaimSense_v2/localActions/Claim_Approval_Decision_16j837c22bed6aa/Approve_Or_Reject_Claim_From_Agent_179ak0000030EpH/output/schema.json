@@ -1,0 +1,60 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "outputClaimId" : {
+      "title" : "outputClaimId",
+      "description" : "Internal Salesforce record ID of the warranty claim that was approved\nor rejected.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : false,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputClaimName" : {
+      "title" : "outputClaimName",
+      "description" : "Human-readable warranty claim reference that was processed,\nused in confirmation responses.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputDealerPhone" : {
+      "title" : "outputDealerPhone",
+      "description" : "Dealer contact phone number used for sending WhatsApp\nor notification messages.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : false,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputErrorMessage" : {
+      "title" : "outputErrorMessage",
+      "description" : "Error message returned if the approval or rejection action\ncould not be completed successfully.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputSuccess" : {
+      "title" : "outputSuccess",
+      "description" : "Indicates whether the approve or reject action completed\nsuccessfully.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : false,
+      "copilotAction:useHydratedPrompt" : false
+    },
+    "outputWhatsAppSent" : {
+      "title" : "outputWhatsAppSent",
+      "description" : "Indicates whether a WhatsApp notification was successfully\nsent to the dealer as part of the decision process.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : false,
+      "copilotAction:isUsedByPlanner" : false,
+      "copilotAction:useHydratedPrompt" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}
