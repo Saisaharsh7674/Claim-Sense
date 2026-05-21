@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Observation_Level__c</fullName>
+    <label>Observation Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First Order (raw extraction)</fullName>
+                <default>true</default>
+                <label>First Order (raw extraction)</label>
+            </value>
+            <value>
+                <fullName>Second Order (reflection/pattern)</fullName>
+                <default>false</default>
+                <label>Second Order (reflection/pattern)</label>
+            </value>
+            <value>
+                <fullName>Third Order (editorial/trend)</fullName>
+                <default>false</default>
+                <label>Third Order (editorial/trend)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

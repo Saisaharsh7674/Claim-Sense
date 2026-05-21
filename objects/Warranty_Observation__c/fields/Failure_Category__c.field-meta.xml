@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failure_Category__c</fullName>
+    <label>Failure Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Compressor Seal Failure</fullName>
+                <default>false</default>
+                <label>Compressor Seal Failure</label>
+            </value>
+            <value>
+                <fullName>Battery Management Failure</fullName>
+                <default>false</default>
+                <label>Battery Management Failure</label>
+            </value>
+            <value>
+                <fullName>Electrical System Failure</fullName>
+                <default>false</default>
+                <label>Electrical System Failure</label>
+            </value>
+            <value>
+                <fullName>Cooling System Failure</fullName>
+                <default>false</default>
+                <label>Cooling System Failure</label>
+            </value>
+            <value>
+                <fullName>Brake System Failure</fullName>
+                <default>false</default>
+                <label>Brake System Failure</label>
+            </value>
+            <value>
+                <fullName>Suspension Failure</fullName>
+                <default>false</default>
+                <label>Suspension Failure</label>
+            </value>
+            <value>
+                <fullName>Software/ECU Failure</fullName>
+                <default>false</default>
+                <label>Software/ECU Failure</label>
+            </value>
+            <value>
+                <fullName>Body/Exterior Defect</fullName>
+                <default>false</default>
+                <label>Body/Exterior Defect</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

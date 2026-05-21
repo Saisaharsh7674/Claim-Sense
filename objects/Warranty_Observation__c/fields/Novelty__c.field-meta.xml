@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Novelty__c</fullName>
+    <label>Novelty</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Entirely Unique</fullName>
+                <default>false</default>
+                <label>Entirely Unique</label>
+            </value>
+            <value>
+                <fullName>Distinctive</fullName>
+                <default>false</default>
+                <label>Distinctive</label>
+            </value>
+            <value>
+                <fullName>Commonplace</fullName>
+                <default>false</default>
+                <label>Commonplace</label>
+            </value>
+            <value>
+                <fullName>Exact Duplicate</fullName>
+                <default>false</default>
+                <label>Exact Duplicate</label>
+            </value>
+            <value>
+                <fullName>Flagged for Review</fullName>
+                <default>true</default>
+                <label>Flagged for Review</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
